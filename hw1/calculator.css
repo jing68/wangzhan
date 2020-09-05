@@ -54,3 +54,7 @@
   background-color: green;
   color:white;
 }
+
+::placeholder{
+  color:black;
+}
