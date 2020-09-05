@@ -28,21 +28,15 @@
   border-color: black;
   border-radius: 1px;
   border-width: 2px;
-  padding:0.8em 0.1em;
-  width:12em;
+  padding:0.8em 0.5em;
+  width:11em;
   font-weight: bold;
   font-size: 20px;
   text-align: right;
 }
 
 #space{
-  background-color:white;
-  border-style: inherit;
-  padding: 0.5em 1.5em 0.5em 1em;
-  width:1em;
-  margin: 3px;
-  font-size: 18px;
-  color: white;
+  visibility: hidden;
 }
 
 .num:hover{
