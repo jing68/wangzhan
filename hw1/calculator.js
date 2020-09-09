@@ -81,13 +81,23 @@ function dis(val)
                 break;
             }
         case 'equal':
-            op.push('=')
-            console.log(op)
-            num = []
-            all_num.push(newdisplay)
-            console.log(all_num)
-            co = true
-            break;
+            if ( i== 1) {
+                op.push('=')
+                num=[]
+                co = false
+                i = 0
+                break;
+            }
+            else {
+                op.push('=')
+                console.log(op)
+                num = []
+                all_num.push(newdisplay)
+                console.log(all_num)
+                co = true
+                i = 0
+                break;
+            }
         default:
             if(newdisplay == 0) {
                 var result = parseInt(val) + newdisplay
@@ -113,9 +123,7 @@ function dis(val)
                 co = false;               
             }
     }
-    if (op.length>1 && co == true) {
-        
-        
+    if (op.length>1 && co == true) {   
         if (op[op.length-2]=='+') {
             addition = all_num[all_num.length-2]+all_num[all_num.length-1]
             console.log(addition)
