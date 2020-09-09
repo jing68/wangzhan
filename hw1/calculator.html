@@ -4,42 +4,43 @@
     <link rel="stylesheet" href="calculator.css">
     <meta charset="utf-8">
     <title></title>
+    <script src="calculator.js"></script>
   </head>
   <body>
 
     <p>
-      <input type="text" id="calc-display" value="" placeholder="0">
+      <input type="text" id="calc-display" value="0" >
     </p>
 
     <div class="buttons">
 
 
     <p>
-      <input class = "num" type="button" id = "calc-key-7"  value="7" onclick="">
-      <input class = "num" type="button" id="calc-key-8" value="8">
-      <input class = "num" type="button" id="calc-key-9" value="9">
-      <input class = "op" type="button" id="calc-plus" value="&plus;">
+      <input class = "num" type="button" id = "calc-key-7"  value="7" onclick="dis('7')">
+      <input class = "num" type="button" id="calc-key-8" value="8" onclick="dis('8')">
+      <input class = "num" type="button" id="calc-key-9" value="9" onclick = "dis('9')">
+      <input class = "op" type="button" id="calc-plus" value="&plus;" onclick = "dis('add')">
     </p>
 
     <p>
-      <input class = "num" type="button" id="calc-key-4" value="4">
-      <input class = "num" type="button" id="calc-key-5" value="5">
-      <input class = "num" type="button" id="calc-key-6" value="6">
-      <input class = "op" type="button" id="calc-minus" value="&minus;">
+      <input class = "num" type="button" id="calc-key-4" value="4" onclick = "dis('4')">
+      <input class = "num" type="button" id="calc-key-5" value="5" onclick = "dis('5')">
+      <input class = "num" type="button" id="calc-key-6" value="6" onclick = "dis('6')">
+      <input class = "op" type="button" id="calc-minus" value="&minus;" onclick = "dis('minus')">
     </p>
 
     <p>
-      <input class = "num" type="button" id="calc-key-1" value="1">
-      <input class = "num" type="button" id="calc-key-2" value="2">
-      <input class = "num" type="button" id="calc-key-3" value="3">
-      <input class = "op" type="button" id ="calc-times" value="&times;">
+      <input class = "num" type="button" id="calc-key-1" value="1" onclick = "dis('1')">
+      <input class = "num" type="button" id="calc-key-2" value="2" onclick = "dis('2')">
+      <input class = "num" type="button" id="calc-key-3" value="3" onclick = "dis('3')">
+      <input class = "op" type="button" id ="calc-times" value="&times;" onclick = "dis('time')">
     </p>
 
     <p>
       <input class = "num" type="button" id="space" value=".">
-      <input class = "num" type="button" id="calc-key-0" value="0">
-      <input class = "op" type="button" id="calc-equals" value="&equals;">
-      <input class = "op" type="button" id="calc-divide" value="&divide;">
+      <input class = "num" type="button" id="calc-key-0" value="0" onclick = "dis('0')">
+      <input class = "op" type="button" id="calc-equals" value="&equals;" onclick = "dis('equal')">
+      <input class = "op" type="button" id="calc-divide" value="&divide;" onclick = "dis('divide')">
     </p>
 
    </div>
