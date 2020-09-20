@@ -1,0 +1,78 @@
+<!--{% load static %}-->
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="{% static 'css/calculator.css' %}">
+    <meta charset="utf-8">
+    <title>my_calculator</title>
+    <!--<script  src = "{% static 'js/calculator.js' %}"></script>-->
+
+  </head>
+  <body>
+
+
+    <!-- <form action="{% url 'cal' %}" method="get">
+        <p> -->
+           
+            <!--<label>runtime</label>-->
+            <!--<input type="text"  name = "runtime"  value = "{{run_count}}" placeholder="0">-->
+            <!--<br>-->
+
+        <!-- </p>
+    </form> -->
+
+ <form action="{% url 'cal' %}" method="post">
+    <input type="text" id="calc-display" name = "calc_display"  value = "{{display_html_value}}"  >
+    <br>
+    <div class="buttons">
+
+    <p>
+      <button class = "num" type="submit" id = "calc-key-7" name="press" value="7">7</button>
+      <button class = "num" type="submit" id="calc-key-8" name="press" value="8" >8</button>
+      <button class = "num" type="submit" id="calc-key-9" name="press" value="9" >9</button>
+      <button class = "op" type="submit" id="calc-plus" name="press" value="plus" >&plus;</button>
+    </p>
+
+    <p>
+      <button class = "num" type="submit" id="calc-key-4" name="press" value="4" >4</button>
+      <button class = "num" type="submit" id="calc-key-5" name="press" value="5" >5</button>
+      <button class = "num" type="submit" id="calc-key-6" name="press" value="6" >6</button>
+      <button class = "op" type="submit" id="calc-minus" name="press" value="minus" >&minus;</button>
+    </p>
+
+    <p>
+      <button class = "num" type="submit" id="calc-key-1" name="press" value="1" >1</button>
+      <button class = "num" type="submit" id="calc-key-2" name="press" value="2" >2</button>
+      <button class = "num" type="submit" id="calc-key-3" name="press" value="3" >3</button>
+      <button class = "op" type="submit" id ="calc-times" name="press" value="times" >&times;</button>
+    </p>
+
+    <p>
+      <button class = "num" type="submit" id="space" name="press" value="."></button>
+      <button class = "num" type="submit" id="calc-key-0" name="press" value="0" >0</button>
+      <button class = "op" type="submit" id="calc-equals" name="press" value="equals" >&equals;</button>
+      <button class = "op" type="submit" id="calc-divide" name="press" value="divide" >&divide;</button>
+    </p>
+        <label>count_op</label>
+        <input type="text"  name = "count_opn"  value = "{{count_op}}" >
+        <br>
+        <label>display</label>
+        <input type="text"  name = "displayn"  value = "{{display}}" >
+        <br>
+        <label>pre_value</label>
+        <input type="text"  name = "pre_valuen"  value = "{{pre_value}}" >
+        <br>
+        <label>cur_value</label>
+        <input type="text"  name = "cur_valuen"  value = "{{cur_value}}" >
+        <br>
+        <label>pre_operator</label>
+        <input type="text"  name = "pre_operatorn"  value = "{{pre_operator}}" >
+
+   </div>
+
+
+   </form>
+
+  </body>
+</html>
