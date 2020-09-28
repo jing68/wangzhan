@@ -1,0 +1,29 @@
+{% extends "global.html" %}
+{% load static %}
+
+
+
+{% block content %}
+<p><span id="id_name_of_page">Profile Page for {{user.first_name}} {{user.last_name}}</span></p>
+
+    <form method="post" action="">
+        <img src="{% static 'image2.jpg' %}" alt="prifile_picture" id="id_user_picture">
+            <br><br>
+    
+             
+        <textarea name="" id="" cols="30" rows="3" id='id_bio_input_text'>My major is computer science. I like to play basketball.</textarea>
+        <br><br>
+        <p>Profile Picture: <button id="id_profile_picture">Choose File</button> No file chosen</p>
+        <br>
+        <button type="submit" id='id_update_profile_button'>Submit</button>
+        <br><br>
+        <p>You are following:</p>  
+
+            <li><a href="{% url 'jam' %}" id='id_profile_link_jam'>Jam R</a></li>
+            <li><a href="" id='id_profile_link_mary'>Mary J</a></li>
+            <li><a href="" id='id_profile_link_luna'>Luna C</a></li>
+ 
+        {% csrf_token %}
+    </form>
+
+{% endblock %}

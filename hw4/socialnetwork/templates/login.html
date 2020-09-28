@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block user_info %}
+    <div>
+        <a href="{% url 'register' %} " id="id_register_link">
+            <button>Register</button>
+        </a>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+<p><span id="id_name_of_page">Login</span></p>
+
+<form  method="post" action="{% url 'login' %}">
+    <table class="loginform">
+        {% for field in form.visible_fields %} 
+                <tr>
+                    <td>{{field.label_tag}}</td> 
+                  
+                    <td>{{field}}</td>
+                    <td class="errorlist">
+                        {% for error in field.errors %} {{error}} {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+    </table>
+    {% csrf_token %}
+    <button  type="submit" id="id_login_button">Submit</button>
+</form>
+{% for error in form.non_field_errors %}
+        <p class="errorlist">
+            {{ error }}
+        </p>
+    {% endfor %}
+{% endblock %}

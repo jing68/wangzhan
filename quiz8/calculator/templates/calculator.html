@@ -1,0 +1,17 @@
+<html>
+
+<p>hello</p>
+
+<form method="post" action="/">
+    <table>
+        {{form}}
+    </table>
+    {% csrf_token %}
+    <button type="submit">Divide</button>
+</form>
+
+{% if z %}
+<h3>{{x}} &divide; {{y}} ={{z}}</h3>
+{% endif %}
+</html>
+

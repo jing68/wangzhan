@@ -1,0 +1,23 @@
+{% extends "global.html" %}
+{% load static %}
+
+
+
+{% block content %}
+<p><span id="id_name_of_page">Profile Page for Jam R</span></p>
+
+
+    <img src="{% static 'image1.jpg' %}" alt="prifile_picture" id="id_user_picture">
+    <br><br>
+    <div>
+        <textarea readonly name="" id="" cols="30" rows="3" id='id_user_bio'>This is my profile, welcome to follow me</textarea>
+    </div>  
+        
+    <br>
+    <form action="">
+        <a href="" id='id_follow' value="follow"><button> follow</button></a>
+        <a href="" id='id_unfollow'  value="unfollow"><button style="visibility: hidden;"> unfollow</button></a>
+
+    </form>
+
+{% endblock %}
