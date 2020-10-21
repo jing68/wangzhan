@@ -1,0 +1,43 @@
+ {% extends "global.html" %} 
+
+
+
+{% block content %}
+
+
+    <p><span id="id_name_of_page">Follower Stream</span></p>
+
+
+    {% for post in posts %}
+        {% if error %}
+            <div class="error">
+                {{error}}
+            </div>
+        {% endif %}            
+        
+        {% if post.username in followlist %}
+            Post by
+            {{user.id}}    {{post.user_id}}  
+            <!-- user.id is id for current user, post.user_id is id for who post it -->
+            <a href="{% url 'other_profile' post.user_id %}" id='id_post_profile_{{post.id}}'>
+                {{post.user.get_full_name }} {{post.user_id}}                   
+            </a>
+            - <span id='id_post_text_{{post.id}}'>{{post.post_input_text}}</span>
+            -- <span id='id_post_date_time_{{post.id}}'>
+                {{post.datetime}}
+                </span>
+            <form action="" method='post'>
+                <label for="">Comment: </label>
+                <input type="text">
+                <button type="submit">Submit</button>
+                {% csrf_token %}
+            </form>
+        {% endif %}
+
+    {% endfor %}
+
+
+
+
+
+{% endblock %}

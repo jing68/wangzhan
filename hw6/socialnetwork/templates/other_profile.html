@@ -1,0 +1,43 @@
+{% extends "global.html" %}
+{% load static %}
+
+
+{% block content %}
+        {% if error %}
+            <div class="error">
+                {{error}}
+            </div>
+        {% endif %}
+<p><span id="id_name_of_page">Profile Page for {{profile_user.get_full_name}}</span></p>
+
+    {{profile_user.id}}
+
+    <div>
+        {% if item.Profile_Picture %}
+            <img src="{% url 'photo' item.id %}"  width="200px">  
+            <!-- item.id: profile里的数据的id主键 -->
+        {% else %}             
+            <img src="{% static '4.jpg' %}" width="200px">
+            default
+        {% endif %}           
+    </div>
+    <br><br>
+
+    <div>
+        {% if item.bio_input_text %}
+            <textarea readonly name="" id="" cols="30" rows="3" id='id_user_bio'>{{item.bio_input_text}}</textarea>
+        {% else %}
+            <textarea readonly name="" id="" cols="30" rows="3" id='id_user_bio'></textarea>
+        {% endif %}
+    </div>
+
+    <form action="{% url 'other_profile' profile_user.id %}" method="post">
+        {% if profile_user.username in followlist %}
+            <button type ='submit' name='unfollow' value='unfollow'>unfollow</button>
+        {% else %}
+            <button type ='submit' name='follow' value='follow'>follow</button> 
+        {% endif %}
+        {% csrf_token %}
+    </form>
+    
+{% endblock %} 

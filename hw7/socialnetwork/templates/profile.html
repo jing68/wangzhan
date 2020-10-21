@@ -1,0 +1,56 @@
+{% extends "global.html" %}
+{% load static %}
+
+
+{% block content %}
+
+    {% if error %}
+        <div class="error">
+            {{error}}
+        </div>
+        {% endif %}
+    <p><span id="id_name_of_page">Profile Page for {{user.first_name}} {{user.last_name}}</span></p>
+  
+        <div>
+
+            {% if item.Profile_Picture %}
+                <img src="{% url 'photo' item.id %}"  width="200px">  
+            {% else %}             
+                <img src="{% static '4.jpg' %}" width="200px">
+                default
+            {% endif %}           
+        </div>
+
+    <br>
+
+    <form enctype = "multipart/form-data"  action="{% url 'profile_logged_in' %}" method="post">
+        <table>
+            {% for field in form.visible_fields %}
+                <tr>
+                    <td>{{ field.label_tag}}</td>
+                    <td>{{field}}</td>
+                    <td class="error">
+                        {% for error in field.errors %} {{error}} {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+            <tr><td colspan="3"><input type="submit" value="Submit"></td></tr>
+        </table>
+        {% csrf_token %}
+    </form>    
+
+
+    <br><br>
+    <p>You are following:</p>  
+
+
+    {% for user in users %}
+   
+        {% if user.id in followlist %}
+         
+            <li><a href="{% url 'other_profile' user.id %}" id='id_profile_link_{{user.id}}'>{{user.get_full_name}}</a></li>       
+        {% endif %}
+    {% endfor %}
+
+
+{% endblock %}

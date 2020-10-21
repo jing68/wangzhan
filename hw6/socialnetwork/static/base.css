@@ -1,0 +1,72 @@
+
+.site_name {
+    background-color: rgb(16, 143, 58);
+    font-size: 60px;
+    width: 100%;
+    padding: 40px;
+    text-align: left;
+    color:white;
+} 
+
+.user_info {
+    position: absolute;
+    right:40px;
+    top:100px;
+    font-family: sans-serif; 
+    padding-right: 20px;
+    font-size: x-large;
+}
+    
+
+.content {
+    margin-left: 25%;
+    margin-right: auto;
+    width: 90%;
+    font-family: sred;
+    font-size: x-large;
+    padding: 25px 50px;
+ 
+
+}
+#id_name_of_page {
+    width:100%;
+    text-align: right;
+    background-color: aquamarine;
+}
+a {
+    font-style: italic;
+}
+
+
+button {
+    background-color: pink;   
+}
+
+.errorlist {
+    color:red;
+}
+
+.btn {
+    background-color:pink;
+    color:green;
+    font-size: x-large;
+}
+
+.dropdown {
+    color: white;
+}
+
+.loginform, .registerform {
+    margin-left:auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+}
+
+body {
+  
+    background-color:rgb(233, 230, 206) ;
+}
+
+button {
+    border-radius: 12px;
+}
